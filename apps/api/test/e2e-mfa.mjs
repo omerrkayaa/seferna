@@ -30,7 +30,7 @@ async function api(method, path, token, body) {
   return { status: res.status, body: json };
 }
 const lastCode = (phone) =>
-  [...log().matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)?.[2];
+  [...log().matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)?.[2];
 /** SMS adımı: yeni kod (60 sn sınırı için bekleyen kod silinir) → doğrulama yanıtı (belirteç ya da challenge) */
 async function smsStep(phone) {
   psql(`delete from otp_codes where phone='${phone}'`);
@@ -84,7 +84,7 @@ r = await api("POST", "/me/totp/setup", preToken, {});
 const secret = r.body.secret;
 const url = r.body.otpauthUrl ?? "";
 check("anahtar base32 (160 bit = 32 karakter)", r.status === 201 && /^[A-Z2-7]{32}$/.test(secret ?? ""), JSON.stringify(r.body));
-check("otpauth adresi: Nakliye etiketi, maskeli numara, SHA1/6/30", url.startsWith("otpauth://totp/Nakliye%3A") && url.includes(`secret=${secret}`) && url.includes("issuer=Nakliye") && url.includes("algorithm=SHA1") && url.includes("digits=6") && url.includes("period=30") && url.includes(encodeURIComponent("***")) && !url.includes(P.slice(3)), url);
+check("otpauth adresi: Seferna etiketi, maskeli numara, SHA1/6/30", url.startsWith("otpauth://totp/Seferna%3A") && url.includes(`secret=${secret}`) && url.includes("issuer=Nakliye") && url.includes("algorithm=SHA1") && url.includes("digits=6") && url.includes("period=30") && url.includes(encodeURIComponent("***")) && !url.includes(P.slice(3)), url);
 const Pid = idOf(P);
 const enc = psql(`select pending_enc from user_totp where user_id='${Pid}'`);
 check("DB'de bekleyen anahtar şifreli (v1.…, düz anahtar yok), etkin anahtar boş", enc.startsWith("v1.") && !enc.includes(secret) && psql(`select secret_enc is null and enabled_at is null from user_totp where user_id='${Pid}'`) === "t");

@@ -107,7 +107,7 @@ export class ConfirmationService {
           if (next === l.status) continue;
           await tx.update(loadPosts).set({ status: next }).where(eq(loadPosts.id, l.id));
           if (next === "suresi_doldu") {
-            // Açık soru cevapsız kapanır: SMS linki geçersizleşir; BR-06 (güven skoru) ve tez metriği bunu sayar
+            // Açık soru cevapsız kapanır: SMS linki geçersizleşir; BR-06 (güven skoru) ve metrikler bunu sayar
             await tx
               .update(loadConfirmations)
               .set({ answer: "cevapsiz" })

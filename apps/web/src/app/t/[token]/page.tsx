@@ -17,7 +17,7 @@ export default function ConfirmPage({ params }: PageProps<"/t/[token]">) {
     <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 py-10">
       <div className="flex items-center gap-2 text-primary">
         <Truck className="size-6" aria-hidden />
-        <span className="font-bold">Nakliye</span>
+        <span className="font-bold">Seferna</span>
       </div>
       <Suspense fallback={<p className="text-muted-foreground">Yükleniyor…</p>}>
         <Confirm params={params} />

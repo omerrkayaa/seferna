@@ -42,7 +42,7 @@ export class AdminReportsController {
   }
 }
 
-/** Y5 / FR-53 tez metrikleri */
+/** Y5 / FR-53 platform metrikleri */
 @Controller("admin/metrics")
 @UseGuards(AuthGuard)
 @Roles("admin")

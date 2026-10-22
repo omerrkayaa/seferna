@@ -12,7 +12,7 @@ const short = (iso: string) => {
 };
 const pct = (r: number | null) => (r === null ? "—" : `%${Math.round(r * 100)}`);
 
-/** Y5 / FR-53: tez metrikleri. Ana başarı ölçütü haftalık kapanan yük (tamamlanan iş). */
+/** Y5 / FR-53: platform metrikleri. Ana başarı ölçütü haftalık kapanan yük (tamamlanan iş). */
 export default function MetricsPage() {
   return (
     <Suspense fallback={<p className="text-muted-foreground">Yükleniyor…</p>}>
@@ -33,7 +33,7 @@ async function Metrics() {
         <p className="text-5xl font-semibold" data-testid="closed-this-week">
           {thisWeek.closed}
         </p>
-        <p className="text-sm text-muted-foreground">{short(thisWeek.week)} haftası · tamamlanan taşıma (tezin ana başarı ölçütü)</p>
+        <p className="text-sm text-muted-foreground">{short(thisWeek.week)} haftası · tamamlanan taşıma (ana başarı ölçütü)</p>
       </section>
 
       <div className="grid gap-3 sm:grid-cols-3">

@@ -10,7 +10,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/75">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-3">
         <Link href="/" className="flex items-center gap-2 font-bold text-primary">
-          <Truck className="size-6" aria-hidden /> Nakliye
+          <Truck className="size-6" aria-hidden /> Seferna
         </Link>
         <nav aria-label="Site" className="flex items-center gap-4 text-sm">
           <Link href="/#nasil-calisir" className="hidden underline-offset-4 hover:underline sm:inline">
@@ -39,7 +39,7 @@ export function SiteFooter() {
   return (
     <footer className="mt-auto border-t bg-muted/30">
       <div className="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm text-muted-foreground">
-        <p>© 2026 Nakliye · Bilgisayar Mühendisliği tez projesi</p>
+        <p>© 2026 Seferna</p>
         <nav aria-label="Kurumsal" className="flex flex-wrap gap-4">
           <Link href="/rehber" className="underline-offset-4 hover:underline">
             Rehber
@@ -73,7 +73,7 @@ export function LegalPage({ title, updated, children }: { title: string; updated
           <p className="text-sm text-muted-foreground">Son güncelleme: {updated}</p>
         </div>
         <p role="note" className="rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950 dark:bg-amber-950/30 dark:text-amber-100">
-          Bu metin taslaktır: platform tez kapsamında deneme aşamasındadır ve metin yayından önce hukuki incelemeden geçecektir.
+          Bu metin taslaktır: platform deneme aşamasındadır ve metin yayından önce hukuki incelemeden geçecektir.
           Köşeli parantez içindeki bilgiler henüz belirlenmemiştir.
         </p>
         <div className="space-y-6 leading-relaxed [&_h2]:text-xl [&_h2]:font-semibold [&_li]:ml-5 [&_li]:list-disc [&_ul]:space-y-1">{children}</div>

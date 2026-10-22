@@ -12,7 +12,7 @@ export default function KvkkPage() {
         <h2>1. Veri sorumlusu</h2>
         <p>
           6698 sayılı Kişisel Verilerin Korunması Kanunu (&quot;KVKK&quot;) uyarınca veri sorumlusu [veri sorumlusunun unvanı ve adresi]&apos;dir
-          (&quot;Nakliye&quot;).
+          (&quot;Seferna&quot;).
         </p>
       </section>
       <section className="space-y-2">
@@ -36,7 +36,7 @@ export default function KvkkPage() {
           <li>Yük sahibiyle nakliyeciyi buluşturma: ilan yayınlama, eşleştirme, teklif ve taşıma süreçleri.</li>
           <li>İlanların güncelliğini sağlama: ilan sahibine düzenli teyit sorusu (uygulama içi bildirim ve SMS).</li>
           <li>Güvenlik ve kötüye kullanımın önlenmesi: numara gösterme ve şikayet sınırları, sahte ilan incelemesi, hesap askıya alma.</li>
-          <li>Güven skoru ve puanlama; tez çalışması kapsamında anonim istatistik (ör. haftalık tamamlanan taşıma sayısı).</li>
+          <li>Güven skoru ve puanlama; platformu geliştirmek için anonim istatistik (ör. haftalık tamamlanan taşıma sayısı).</li>
         </ul>
       </section>
       <section className="space-y-2">

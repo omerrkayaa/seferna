@@ -86,7 +86,7 @@ test("hesabı sil: kod → onay vazgeçilirse bir şey olmaz → yanlış kod ha
   await page.goto("/panel/hesap");
   await page.getByRole("button", { name: "Silme kodu gönder" }).click();
   await expect(page.getByRole("status")).toContainText("numarasına 6 haneli kod gönderildi.");
-  const code = await smsCode(phone(801), "Nakliye hesap silme kodunuz");
+  const code = await smsCode(phone(801), "Seferna hesap silme kodunuz");
 
   // Onay penceresinde vazgeç: gönderilmez
   await page.getByLabel("SMS'teki kod").fill(code);
@@ -122,7 +122,7 @@ test("silinen nakliyeci: yük sahibinin listesinde 'Silinmiş kullanıcı', numa
   await api("POST", `/jobs/${acc.job.id}/deliver`, C3.accessToken, { code: acc.deliveryCode });
   await api("POST", `/jobs/${acc.job.id}/complete`, S2.accessToken);
   expect((await api("POST", "/me/deletion-code", C3.accessToken)).status).toBe(204);
-  const del = await api("DELETE", "/me", C3.accessToken, { code: await smsCode(phone(805), "Nakliye hesap silme kodunuz") });
+  const del = await api("DELETE", "/me", C3.accessToken, { code: await smsCode(phone(805), "Seferna hesap silme kodunuz") });
   expect(del.status).toBe(200);
 
   const ctx = await browserAs(browser, S2);

@@ -32,7 +32,7 @@ async function api(method, path, token, body) {
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);
-  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
+  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
   return (await api("POST", "/auth/otp/verify", null, { phone, code })).body;
 }
 
@@ -67,7 +67,7 @@ const tick = async () => (await api("POST", "/admin/tick", A)).body;
 const load = (id) => psql(`select status||'|'||coalesce(reminder_sent_at::text,'-') from load_posts where id='${id}'`).split("|");
 const questions = (id) => psql(`select count(*) from load_confirmations where load_post_id='${id}'`);
 /** Son SMS'teki token (bu ilanın sahibine giden) */
-const lastSms = () => [...log().matchAll(new RegExp(`\\[SMS → \\${phone(1)}\\] (Nakliye: .*?/t/([A-Za-z0-9_-]+))`, "g"))].at(-1);
+const lastSms = () => [...log().matchAll(new RegExp(`\\[SMS → \\${phone(1)}\\] (Seferna: .*?/t/([A-Za-z0-9_-]+))`, "g"))].at(-1);
 
 console.log("\nYetki");
 check("yönetici olmayan turu tetikleyemez 403", (await api("POST", "/admin/tick", S)).status === 403);

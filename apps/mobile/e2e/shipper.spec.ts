@@ -124,7 +124,7 @@ test("yük sahibi: giriş → ilan → teyit → teklif kabul → teslim → pua
     await shot(page, "s4-kabul-kod");
     const shown = await page.getByLabel(/^Teslim kodu /).locator("visible=true").innerText();
     expect(shown).toMatch(/^\d{6}$/);
-    expect(smsCodes(me, "Nakliye teslim kodunuz").at(-1)).toBe(shown);
+    expect(smsCodes(me, "Seferna teslim kodunuz").at(-1)).toBe(shown);
     await expect(vis(page, "Kabul edildi", true)).toBeVisible();
     await expect(vis(page, "Hâlâ geçerli")).toHaveCount(0); // ilan kapandı
     await vis(page, "Taşımaya git").click();
@@ -136,11 +136,11 @@ test("yük sahibi: giriş → ilan → teyit → teklif kabul → teslim → pua
   const jobId = page.url().split("/is/")[1]!.split(/[?#]/)[0]!;
 
   await test.step("yeni teslim kodu: eskisi geçersiz, yenisiyle teslim", async () => {
-    const old = smsCodes(me, "Nakliye teslim kodunuz").at(-1)!;
+    const old = smsCodes(me, "Seferna teslim kodunuz").at(-1)!;
     await vis(page, "Yeni teslim kodu").click();
     expect(dialogs.at(-1)).toContain("Eski kod geçersiz olur");
     await expect(vis(page, "Yeni teslim kodunuz")).toBeVisible();
-    const fresh = smsCodes(me, "Nakliye teslim kodunuz").at(-1)!;
+    const fresh = smsCodes(me, "Seferna teslim kodunuz").at(-1)!;
     expect(fresh).not.toBe(old);
     await expect(vis(page, fresh, true)).toBeVisible();
 

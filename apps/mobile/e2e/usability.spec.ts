@@ -4,7 +4,7 @@ import { minPrefix, Ops, report } from "./usability";
 
 // NFR-07 kullanılabilirlik (docs/03): "ilk ilanı vermek < 90 sn; yük aramaktan aramaya < 3 dokunuş". En kısa yol
 // arayüzde yürünür; dokunuş, tuş ve karar adımları sayılır, süre KLM ile tahmin edilir (usability.ts). Yöntem ve
-// sonuçlar tez/kullanilabilirlik/README.md; NFR07_OUT=<klasör> verilirse sonuçlar JSON olarak yazılır.
+// sonuçlar arastirma/kullanilabilirlik/README.md; NFR07_OUT=<klasör> verilirse sonuçlar JSON olarak yazılır.
 // Güzergâh: Aydın/Nazilli → İstanbul/Esenyurt (demo koridoru).
 
 type Province = { name: string; districts: { name: string }[] };

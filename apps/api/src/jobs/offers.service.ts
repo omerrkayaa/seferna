@@ -67,7 +67,7 @@ export class OffersService {
       throw e;
     }
 
-    // Tez metriği "eşleşme isabeti": eşleşme teklife dönüştü
+    // Metrik "eşleşme isabeti": eşleşme teklife dönüştü
     await this.db
       .update(matches)
       .set({ outcome: "teklif" })

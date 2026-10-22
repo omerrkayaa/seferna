@@ -1,6 +1,6 @@
 // Kural tabanlı eşleştirme — docs/03 BR-20, BR-21; docs/04 §4
 // Veritabanında aday bulma PostGIS ile yapılır; bu modül aynı kuralın referans uygulamasıdır
-// (skor hesabı, testler ve tez simülasyonu bunu kullanır).
+// (skor hesabı, testler ve simülasyon bunu kullanır).
 import { vehicleCanCarry, type BodyType, type VehicleType } from "../constants.js";
 import { haversineKm, type LatLng } from "../geo.js";
 

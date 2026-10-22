@@ -1,8 +1,8 @@
-# Tez simülasyonları
+# Simülasyonlar
 
-Bu klasör, tezin Faz 6 deneylerinin simülasyon kodunu, testlerini ve sonuçlarını içerir.
+Bu klasör, eşleştirme ve dönüş planı deneylerinin simülasyon kodunu, testlerini ve sonuçlarını içerir.
 
-- **Deney 1:** Kural tabanlı eşleştirme (sistemin kendisi) ile Macar algoritması tabanlı küresel eşleştirmenin karşılaştırılması (docs/04 §4 "Tez katkısı").
+- **Deney 1:** Kural tabanlı eşleştirme (sistemin kendisi) ile Macar algoritması tabanlı küresel eşleştirmenin karşılaştırılması (docs/04 §4 "Özgün katkı").
 - **Deney 3:** Canlı ilan teyidinin (F1, BR-01…05) ilan tazeliğine etkisi ve teyit sürelerinin duyarlılık analizi.
 - **Deney 2:** Dönüş planının (F4: dönüş yükleri + rota üstü ara yükler) boş km'ye etkisi (§7).
 
@@ -16,21 +16,21 @@ Kökten (`C:\Users\omerk\Desktop\nakliye`). PowerShell'de `npx` yerine `npx.cmd`
 
 ```bash
 # Testler (Node'un kendi test koşucusu; 32 test, ~3 sn)
-npx tsx --test tez/simulasyon/test/*.test.ts
+npx tsx --test arastirma/simulasyon/test/*.test.ts
 
 # Bütün deneyler (30 tohum; bu makinede ~7 dk: Deney 1 ~170 sn, Deney 2 ~190 sn, Deney 3 ~10 sn)
-npx tsx tez/simulasyon/calistir.ts
+npx tsx arastirma/simulasyon/calistir.ts
 
 # Seçenekler
-npx tsx tez/simulasyon/calistir.ts --deney=1      # ya da --deney=2, --deney=3
-npx tsx tez/simulasyon/calistir.ts --tohum=5      # hızlı deneme → sonuclar/deneme-5/
-npx tsx tez/simulasyon/calistir.ts --haversine    # OSRM'i hiç deneme (Deney 2'de rota: doğru çizgi) → sonuclar/deneme-30-haversine/
+npx tsx arastirma/simulasyon/calistir.ts --deney=1      # ya da --deney=2, --deney=3
+npx tsx arastirma/simulasyon/calistir.ts --tohum=5      # hızlı deneme → sonuclar/deneme-5/
+npx tsx arastirma/simulasyon/calistir.ts --haversine    # OSRM'i hiç deneme (Deney 2'de rota: doğru çizgi) → sonuclar/deneme-30-haversine/
 
 # Tip denetimi
-npx tsc -p tez/simulasyon/tsconfig.json
+npx tsc -p arastirma/simulasyon/tsconfig.json
 ```
 
-Bağımlılık eklenmedi; kökteki `node_modules` kullanılır (`tsx`, `typescript`, `@nakliye/shared` workspace bağlantısı). `@nakliye/shared` derlenmiş `dist`'ten okunur: shared değişirse önce `npm run build -w @nakliye/shared`. `tez/simulasyon/package.json` yalnız `"type": "module"` bildirimidir (workspace değildir).
+Bağımlılık eklenmedi; kökteki `node_modules` kullanılır (`tsx`, `typescript`, `@nakliye/shared` workspace bağlantısı). `@nakliye/shared` derlenmiş `dist`'ten okunur: shared değişirse önce `npm run build -w @nakliye/shared`. `arastirma/simulasyon/package.json` yalnız `"type": "module"` bildirimidir (workspace değildir).
 
 **Mesafe kaynağı:** `veri/osrm-ilce-matrisi.bin` varsa o kullanılır. Yoksa ve `http://localhost:5000` (ya da `OSRM_URL`) üzerinde OSRM çalışıyorsa 973 × 973 ilçe matrisi bir kez alınıp oraya yazılır (~25 sn, 400 GET isteği, yalnız okuma). İkisi de yoksa kuş uçuşu × 1,3'e düşülür ve bu, sonuç dosyalarına yazılır. **Bu çalıştırmada OSRM kullanıldı** (rota bulunamayan çift: 0).
 
@@ -40,7 +40,7 @@ Bağımlılık eklenmedi; kökteki `node_modules` kullanılır (`tsx`, `typescri
 
 | Dosya | İçerik |
 |---|---|
-| `deney1.md`, `deney2.md`, `deney3.md` | Tezde kullanılabilecek tablolar (virgül ondalık) |
+| `deney1.md`, `deney2.md`, `deney3.md` | Rapor için tablolar (virgül ondalık) |
 | `deney1_ham.csv`, `deney2_ham.csv`, `deney3_ham.csv` | Her tohum × yapılandırma × yöntem için ham ölçüler (nokta ondalık) |
 | `deney1_ozet.csv`, `deney2_ozet.csv`, `deney3_ozet.csv` | n, ortalama, standart sapma, %95 GA |
 | `deney1_farklar.csv`, `deney2_farklar.csv`, `deney3_farklar.csv` | Eşleştirilmiş farklar: GA, t, p, Wilcoxon W ve p, Holm düzeltmeli p |
@@ -51,7 +51,7 @@ Tüm sayılar `KOK_TOHUM` (parametreler.ts) ile belirlenir; aynı makinede aynı
 ### Dosya yapısı
 
 ```
-tez/simulasyon/
+arastirma/simulasyon/
 ├─ calistir.ts          tek giriş noktası
 ├─ parametreler.ts      TÜM varsayımlar ([T]) — tek dosya
 ├─ deney1.ts            Deney 1 + rapor
@@ -120,7 +120,7 @@ Tüm sayısal varsayımlar `parametreler.ts`'tedir; tam liste §8'de.
 - **Boş km için karayolu:** yerel OSRM (`osrm-routed`, Türkiye Geofabrik verisi, `infra/osrm.md`) `table` servisinden 973 × 973 ilçe merkezi matrisi; varsayılan tablo sınırı 100 koordinat olduğundan 50 kaynak + 50 hedeflik 400 parça. Yönlüdür (A→B ≠ B→A olabilir). 100 m'ye yuvarlanıp `veri/osrm-ilce-matrisi.bin`'e (Uint16, 1,9 MB) yazılır.
 - **Doğrulama:** Nazilli → Esenyurt 633,0 km (API'nin OSRM'li fiyat tahminindeki 633 km ile aynı). 20 km'den uzak ~20 000 rastgele ilçe çiftinde yol / kuş uçuşu oranı: medyan 1,34, ortalama 1,38, %5'lik 1,19, %95'lik 1,72. OSRM yokken kullanılan 1,3 katsayısı medyana yakın ama uzun kuyruğu (dağlık, kıyı, körfez geçişleri) yakalamaz.
 - **Uygunluk mesafesi değişmedi:** BR-20 yarıçapları (kalkış ≤ 50 km, varış ≤ 80 km) sistemdeki gibi shared `matchLoadWithCapacity`'nin kuş uçuşu (haversine) ölçüsüyle verilir. Karayolu yalnız boş km ölçüsüdür.
-- **Lisans:** matris OpenStreetMap verisinden türetilmiştir (© OpenStreetMap katkıcıları, ODbL). Tezde kaynak gösterilmeli.
+- **Lisans:** matris OpenStreetMap verisinden türetilmiştir (© OpenStreetMap katkıcıları, ODbL). Kullanılırken kaynak gösterilmeli.
 
 ---
 
@@ -292,7 +292,7 @@ Duyarlılık (p = 0,7, q = 0,5; tam ızgara p ∈ {0,5; 0,7; 0,9} için `deney3.
 
 ## 6. Testler
 
-`npx tsx --test tez/simulasyon/test/*.test.ts` → **32 test, 32 geçti, 0 kaldı** (bu makinede ~3 sn).
+`npx tsx --test arastirma/simulasyon/test/*.test.ts` → **32 test, 32 geçti, 0 kaldı** (bu makinede ~3 sn).
 
 | Dosya | Ne sınanıyor |
 |---|---|

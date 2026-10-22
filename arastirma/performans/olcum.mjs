@@ -2,9 +2,9 @@
 // itibaren < 60 sn". Geliştirme veritabanı kirlenmesin diye en son yedek (npm run db:backup) ayrı bir veritabanına
 // (nakliye_perf) geri yüklenir, sentetik ilanlar oraya yazılır ve ona bağlı ikinci bir API (3200) ölçülür.
 //
-//   node tez/performans/olcum.mjs [--ilan=10000] [--istek=300] [--es=10] [--deneme=20] [--sakla]
+//   node arastirma/performans/olcum.mjs [--ilan=10000] [--istek=300] [--es=10] [--deneme=20] [--sakla]
 //
-// Ön koşul: Docker'da DB, apps/api derlenmiş (dist), en az bir yedek (backups/). Sonuçlar tez/performans/sonuclar/.
+// Ön koşul: Docker'da DB, apps/api derlenmiş (dist), en az bir yedek (backups/). Sonuçlar arastirma/performans/sonuclar/.
 // Ölçülen süre istemci tarafı uçtan uca: istek gönderimi + API + veritabanı + gövdenin okunması (aynı makine, ağ yok).
 import { spawn, spawnSync } from "node:child_process";
 import { createReadStream, existsSync, mkdirSync, readdirSync, writeFileSync } from "node:fs";
@@ -220,7 +220,7 @@ try {
   s.child.kill();
   if (!KEEP) psql(`drop database if exists ${DB}`, "nakliye");
 }
-const outDir = join(ROOT, "tez", "performans", "sonuclar");
+const outDir = join(ROOT, "arastirma", "performans", "sonuclar");
 mkdirSync(outDir, { recursive: true });
 // Aynı gün ikinci ölçüm öncekinin üzerine yazmasın
 let file = join(outDir, `olcum-${result.olcumTarihi.slice(0, 10)}.json`);

@@ -35,7 +35,7 @@ async function upload(token, fields, bytes) {
   return { status: res.status, body: await res.json().catch(() => null) };
 }
 const lastCode = (phone, kind) =>
-  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Nakliye ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
+  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Seferna ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);

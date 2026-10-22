@@ -6,7 +6,7 @@ import { acceptDialogs, adminToken, api, apiLoad, apiUser, btn, collectErrors, d
 
 const deletionCode = async (p: string) => {
   for (let i = 0; i < 40; i++) {
-    const c = smsCodes(p, "Nakliye hesap silme kodunuz").at(-1);
+    const c = smsCodes(p, "Seferna hesap silme kodunuz").at(-1);
     if (c) return c;
     await new Promise((r) => setTimeout(r, 150));
   }

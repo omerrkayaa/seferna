@@ -10,7 +10,7 @@ export function maskPhone(e164: string | null): string {
   return `0${d.slice(0, 3)} *** ** ${d.slice(8)}`;
 }
 
-/** Kötüye kullanım sınırları (numara toplama ve şikayet spamine karşı); parametrik, tezde gözlenecek. */
+/** Kötüye kullanım sınırları (numara toplama ve şikayet spamine karşı); parametrik, kullanımda gözlenecek. */
 export const ABUSE_LIMITS = {
   /** Bir kullanıcının 24 saatte numarasını açabileceği farklı ilan sayısı (BR-40) */
   callsPerDay: 30,

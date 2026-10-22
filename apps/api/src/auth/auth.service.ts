@@ -58,9 +58,9 @@ export const SUSPENDED_MESSAGE = "Hesabınız askıya alındı.";
 /** Silme başladı ama anonimleştirme bitmedi (zamanlayıcı tamamlar); numara o ana kadar yeni hesaba açılamaz */
 const DELETING_MESSAGE = "Hesap silme işlemi sürüyor. Birkaç dakika sonra tekrar deneyin.";
 const OTP_SMS = {
-  giris: (code: string) => `Nakliye giriş kodunuz: ${code}. Kimseyle paylaşmayın.`,
+  giris: (code: string) => `Seferna giriş kodunuz: ${code}. Kimseyle paylaşmayın.`,
   // Türkçe karakterli SMS 70 karakterle sınırlı (UCS-2); bu metin 58 karakter
-  silme: (code: string) => `Nakliye hesap silme kodunuz: ${code}. Kimseyle paylaşmayın.`,
+  silme: (code: string) => `Seferna hesap silme kodunuz: ${code}. Kimseyle paylaşmayın.`,
 };
 /** Kodun amacı (otp_codes.purpose): giriş kodu silmede, silme kodu girişte geçmez */
 export type OtpPurpose = keyof typeof OTP_SMS;

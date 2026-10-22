@@ -1,7 +1,7 @@
 // NFR-07 kullanılabilirlik (docs/03): "ilk ilanı vermek < 90 sn". Yeni yük sahibinin giriş sayfasından ilk ilanını
 // gönderene kadarki en kısa yolu arayüzde yürünür; tıklama, tuş, karar adımı ve el değiştirme sayılır, süre KLM ile
 // tahmin edilir (usability.ts). Açılır listeler fare + harfle atlama ile seçilir (tıkla, ilk harfler, Enter).
-// Yöntem ve sonuçlar tez/kullanilabilirlik/README.md; NFR07_OUT=<klasör> verilirse sonuçlar JSON olarak yazılır.
+// Yöntem ve sonuçlar arastirma/kullanilabilirlik/README.md; NFR07_OUT=<klasör> verilirse sonuçlar JSON olarak yazılır.
 import { expect, test } from "@playwright/test";
 import { localPhone, otpFor, phone, psql } from "./helpers";
 import { Ops, report } from "./usability";

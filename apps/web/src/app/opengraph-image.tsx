@@ -1,6 +1,6 @@
 import { OG_SIZE, ogCard } from "@/lib/og";
 
-export const alt = "Nakliye: yük sahibiyle nakliyeciyi buluşturan, bayat ilanı listeden düşüren platform";
+export const alt = "Seferna: yük sahibiyle nakliyeciyi buluşturan, bayat ilanı listeden düşüren platform";
 export const size = OG_SIZE;
 export const contentType = "image/png";
 

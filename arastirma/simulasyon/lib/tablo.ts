@@ -1,4 +1,4 @@
-// CSV (makine için: nokta ondalık) ve Markdown (tez için: virgül ondalık) yazımı.
+// CSV (makine için: nokta ondalık) ve Markdown (rapor için: virgül ondalık) yazımı.
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 

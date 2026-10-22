@@ -1,8 +1,8 @@
-// Tez simülasyonlarını çalıştırır ve sonuclar/ altına yazar.
-//   npx tsx tez/simulasyon/calistir.ts                 # tümü (Deney 1, 2, 3)
-//   npx tsx tez/simulasyon/calistir.ts --deney=1       # yalnız Deney 1 (ya da --deney=2, --deney=3)
-//   npx tsx tez/simulasyon/calistir.ts --tohum=5       # hızlı deneme (varsayılan 30)
-//   npx tsx tez/simulasyon/calistir.ts --haversine     # OSRM'i hiç deneme, kuş uçuşu × 1,3 (Deney 2'de rota: doğru çizgi)
+// Simülasyonları çalıştırır ve sonuclar/ altına yazar.
+//   npx tsx arastirma/simulasyon/calistir.ts                 # tümü (Deney 1, 2, 3)
+//   npx tsx arastirma/simulasyon/calistir.ts --deney=1       # yalnız Deney 1 (ya da --deney=2, --deney=3)
+//   npx tsx arastirma/simulasyon/calistir.ts --tohum=5       # hızlı deneme (varsayılan 30)
+//   npx tsx arastirma/simulasyon/calistir.ts --haversine     # OSRM'i hiç deneme, kuş uçuşu × 1,3 (Deney 2'de rota: doğru çizgi)
 // Çıktı dizini --tohum verilince sonuclar/deneme-<n>/ olur (asıl sonuçların üzerine yazmasın diye).
 import { mkdirSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";

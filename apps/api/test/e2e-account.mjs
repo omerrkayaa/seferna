@@ -27,7 +27,7 @@ async function api(method, path, token, body) {
   return { status: res.status, body: json };
 }
 const lastCode = (phone, kind) =>
-  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Nakliye ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
+  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Seferna ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);

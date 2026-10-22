@@ -1,7 +1,7 @@
 /// <reference types="node" />
 // NFR-07 kullanılabilirlik ölçümü (docs/03): kullanıcının en kısa yolda yapacağı işlemleri sayar, süreyi KLM ile tahmin eder.
 // Aynı dosya apps/web/e2e/usability.ts ile apps/mobile/e2e/usability.ts'de (iki ayrı paket): değişiklik ikisine birden.
-// Yöntem ve sonuçlar: tez/kullanilabilirlik/README.md.
+// Yöntem ve sonuçlar: arastirma/kullanilabilirlik/README.md.
 //
 // KLM (Keystroke-Level Model; Card, Moran, Newell 1980, Communications of the ACM 23(7)) işlem süreleri, saniye:
 //   K tuş 0,28 (ortalama, sekreter olmayan yazıcı, ~40 kelime/dk); kötü durum 1,20 (klavyeye yabancı)

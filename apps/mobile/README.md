@@ -1,4 +1,4 @@
-# Nakliye — Android uygulaması (Expo)
+# Seferna — Android uygulaması (Expo)
 
 Expo SDK 57 · Expo Router · React Native 0.86. Nakliyeci ve yük sahibi ekranları; sekmeler role göre:
 nakliyeci **Yükler · Dönüş Planı**, yük sahibi **İlanlarım** (ilan verme oradan), ortak **İşlerim · Profil**. Bildirimler sağ üstteki zilde.
@@ -13,7 +13,7 @@ desteklemiyor), belge fotoğrafı yükleme (dosya deposu kararı). Bildirimler u
 3. Telefona Play Store'dan **Expo Go** kurun, telefon bilgisayarla **aynı Wi-Fi**'da olsun, terminaldeki QR kodu okutun.
 4. Giriş ekranında **Demo hesabıyla gir** (numara `0555 010 20 30`, kod `123456`; yalnız geliştirmede) — demo nakliyeci.
    Yük sahibi tarafını denemek için kendi numaranızla girip "Yük sahibiyim"i seçin; SMS kodu API'nin konsol çıktısında
-   (`[SMS → +90…] Nakliye giriş kodunuz: …`). Yeni hesabın ilk ilanı yönetici onayı bekler (BR-11).
+   (`[SMS → +90…] Seferna giriş kodunuz: …`). Yeni hesabın ilk ilanı yönetici onayı bekler (BR-11).
 
 Bağlanamazsa:
 - Windows Güvenlik Duvarı Node.js'e özel ağda izin vermeli (3000 ve 8081 portları).

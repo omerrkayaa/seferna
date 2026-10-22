@@ -19,7 +19,7 @@ const interTr = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: { default: "Nakliye", template: "%s · Nakliye" },
+  title: { default: "Seferna", template: "%s · Seferna" },
   description: "Gördüğün her yük gerçek ve şu an geçerli. Yük sahibi ile nakliyeciyi buluşturan platform.",
 };
 

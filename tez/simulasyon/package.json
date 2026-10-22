@@ -1,5 +1,0 @@
-{
-  "//": "Yalnız ESM bildirimi: tez simülasyonu workspace değildir, bağımlılığı yoktur (kökteki node_modules kullanılır).",
-  "private": true,
-  "type": "module"
-}

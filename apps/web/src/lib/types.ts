@@ -251,7 +251,7 @@ export interface ShipperSummary {
   jobs: { active: number; completed: number; cancelled: number };
 }
 
-/** Yönetici: tez metrikleri (GET /admin/metrics, Y5) */
+/** Yönetici: platform metrikleri (GET /admin/metrics, Y5) */
 /** NFR-09 istek istatistiği özeti (GET /admin/metrics → api) */
 export interface ApiHealth {
   hours: number;

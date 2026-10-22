@@ -23,7 +23,7 @@ export function confirmationSmsText(
   dest: { province: string; district: string },
   link: string,
 ): string {
-  const build = (o: string, d: string) => toGsm7(`Nakliye: ${o} > ${d} ilaniniz hala gecerli mi? Yanitlayin: ${link}`);
+  const build = (o: string, d: string) => toGsm7(`Seferna: ${o} > ${d} ilaniniz hala gecerli mi? Yanitlayin: ${link}`);
   const full = build(`${origin.province}/${origin.district}`, `${dest.province}/${dest.district}`);
   return full.length <= SINGLE_SMS_LENGTH ? full : build(origin.province, dest.province);
 }

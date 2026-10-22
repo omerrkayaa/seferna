@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PageProps<"/nakliyeci/[id]">)
   const base = { robots: { index: false, follow: false } };
   if (!c) return { ...base, title: "Profil bulunamadı" };
   const description = `${c.completedJobs} tamamlanmış iş${c.rating === null ? "" : ` · ${c.rating.toLocaleString("tr-TR")} puan`} · ${LEVELS[c.verificationLevel]}`;
-  return { ...base, title: c.title, description, openGraph: { title: c.title, description, siteName: "Nakliye", locale: "tr_TR", type: "profile" } };
+  return { ...base, title: c.title, description, openGraph: { title: c.title, description, siteName: "Seferna", locale: "tr_TR", type: "profile" } };
 }
 
 /** Herkese açık nakliyeci profili (karar 2026-10-17): nakliyeci kendisi açar; telefon ve kişi adı gösterilmez. */

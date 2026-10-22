@@ -26,7 +26,7 @@ async function api(method, path, token, body) {
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);
-  const code = [...readFileSync(LOG, "utf8").matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
+  const code = [...readFileSync(LOG, "utf8").matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
   return (await api("POST", "/auth/otp/verify", null, { phone, code })).body;
 }
 const role = async (phone, roles) => (await api("POST", "/me/roles", (await login(phone)).accessToken, { roles })).body.accessToken;

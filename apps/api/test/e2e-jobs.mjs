@@ -29,7 +29,7 @@ async function api(method, path, token, body) {
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);
-  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
+  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
   return (await api("POST", "/auth/otp/verify", null, { phone, code })).body;
 }
 async function user(phone, roles) {
@@ -133,7 +133,7 @@ r = await api("POST", `/offers/${O1}/accept`, S);
 const J = r.body.job?.id, CODE = r.body.deliveryCode;
 check("kabul: iş oluştu + teslim kodu (yalnız bu yanıtta)", r.status === 201 && /^\d{6}$/.test(CODE) && r.body.job.status === "anlasildi", JSON.stringify(r.body).slice(0, 200));
 check("kabulden sonra bekleyen teklif kalmaz", (await mineLoad())?.pendingOffers === 0);
-check("teslim kodu yük sahibine SMS'le gitti", log().includes(`[SMS → ${phone(1)}] Nakliye teslim kodunuz: ${CODE}`));
+check("teslim kodu yük sahibine SMS'le gitti", log().includes(`[SMS → ${phone(1)}] Seferna teslim kodunuz: ${CODE}`));
 check("kod DB'de düz saklanmıyor", psql(`select count(*) from jobs where delivery_code_hash='${CODE}'`) === "0");
 check("ilan kapandı", loadStatus(L) === "kapandi");
 check("diğer teklif reddedildi", offerStatus(O2) === "ret");
@@ -181,7 +181,7 @@ check("yük sahibine 'yeni kod oluşturun' bildirimi", (await notes(S, "job_upda
 check("nakliyeci yeni kod üretemez 403", (await api("POST", `/jobs/${J}/delivery-code`, C1)).status === 403);
 r = await api("POST", `/jobs/${J}/delivery-code`, S);
 const CODE2 = r.body.deliveryCode;
-check("yük sahibi yeni kod üretti (SMS ile)", /^\d{6}$/.test(CODE2) && log().includes(`Nakliye teslim kodunuz: ${CODE2}`));
+check("yük sahibi yeni kod üretti (SMS ile)", /^\d{6}$/.test(CODE2) && log().includes(`Seferna teslim kodunuz: ${CODE2}`));
 check("eski kod artık geçersiz", CODE2 === CODE || (await api("POST", `/jobs/${J}/deliver`, C1, { code: CODE })).status === 400);
 r = await api("POST", `/jobs/${J}/deliver`, C1, { code: CODE2 });
 check("doğru kodla teslim edildi", r.body.status === "teslim_edildi" && r.body.autoCompleteAt, JSON.stringify(r.body).slice(0, 120));

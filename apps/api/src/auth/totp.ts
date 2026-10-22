@@ -71,7 +71,7 @@ export function matchTotp(key: Buffer, code: string, lastStep: number, nowMs: nu
 
 /** Uygulamanın tarayacağı adres (QR). Etiket hesabı ayırt eder; anahtar elle de girilebilir (base32). */
 export function otpauthUrl(secret: Buffer, label: string): string {
-  const issuer = "Nakliye";
+  const issuer = "Seferna";
   const params = new URLSearchParams({ secret: base32Encode(secret), issuer, algorithm: "SHA1", digits: String(DIGITS), period: String(TOTP_PERIOD_S) });
   return `otpauth://totp/${encodeURIComponent(`${issuer}:${label}`)}?${params}`;
 }

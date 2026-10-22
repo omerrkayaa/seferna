@@ -4,7 +4,7 @@
 
 ## Yöntem
 
-`node tez/performans/olcum.mjs` (seçenekler: `--ilan=10000 --istek=300 --es=10 --deneme=20 --sakla`)
+`node arastirma/performans/olcum.mjs` (seçenekler: `--ilan=10000 --istek=300 --es=10 --deneme=20 --sakla`)
 
 1. En son yedek (`npm run db:backup`) ayrı bir veritabanına (`nakliye_perf`) geri yüklenir; geliştirme veritabanı kirlenmez. Mevcut aktif ilanlar ve boş araçlar kapatılır.
 2. Sentetik veri (tohumlu, `setseed(0.42)`): 500 yük sahibi, **10.000 aktif ilan** (yarısı başlangıç koridorunda — Aydın, İzmir, Manisa, İstanbul — yarısı Türkiye geneli; %90 teyitli, %10 teyit bekliyor; 0–10 gün içinde yükleme; karışık yük/araç/kasa/fiyat), 1.000 nakliyeci, araç ve boş araç ilanı.

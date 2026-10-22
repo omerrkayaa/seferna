@@ -36,7 +36,7 @@ export const matchParamsSchema = z
       trust: num(0, 1, "Güven ağırlığı"),
     }),
   })
-  // Skor 0–1 aralığında kalsın (eşleşme sıralaması ve tez ölçütleri bu ölçeği varsayar)
+  // Skor 0–1 aralığında kalsın (eşleşme sıralaması ve simülasyon ölçütleri bu ölçeği varsayar)
   .refine((p) => Math.abs(Object.values(p.weights).reduce((a, b) => a + b, 0) - 1) <= 0.001, { path: ["weights"], message: "Ağırlıkların toplamı 1 olmalı" });
 
 const vehicleCost = (label: string) =>

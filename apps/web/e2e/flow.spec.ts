@@ -78,7 +78,7 @@ test("kabul: onay sorulur, teslim kodu bir kez gösterilir ve SMS'tekiyle aynı"
   await offerRow(O1).getByRole("button", { name: "Kabul et" }).click();
   await expect(page.getByTestId("delivery-code")).toHaveText(/^\d{6}$/);
   code = (await page.getByTestId("delivery-code").textContent())!;
-  expect(code).toBe(await smsCode(SP, "Nakliye teslim kodunuz"));
+  expect(code).toBe(await smsCode(SP, "Seferna teslim kodunuz"));
   // Sayfa yenilendi: ilan kapandı, teklifler sonuçlandı, kod ekranda kaldı
   await expect(page.getByText("Kapandı")).toBeVisible();
   await expect(offerRow(O1)).toContainText("Kabul edildi");
@@ -111,7 +111,7 @@ test("yeni teslim kodu: eski kod geçersizleşir", async () => {
   await expect(page.getByRole("status").filter({ hasText: "Yeni teslim kodunuz" })).toBeVisible();
   const fresh = (await page.getByRole("status").filter({ hasText: "Yeni teslim kodunuz" }).locator(".font-mono").textContent())!;
   expect(fresh).toMatch(/^\d{6}$/);
-  expect(fresh).toBe(await smsCode(SP, "Nakliye teslim kodunuz"));
+  expect(fresh).toBe(await smsCode(SP, "Seferna teslim kodunuz"));
   if (fresh !== code) expect((await api("POST", `/jobs/${J1}/deliver`, C1.accessToken, { code })).status).toBe(400);
   code = fresh;
 });

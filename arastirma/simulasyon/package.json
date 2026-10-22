@@ -1,0 +1,5 @@
+{
+  "//": "Yalnız ESM bildirimi: simülasyon workspace değildir, bağımlılığı yoktur (kökteki node_modules kullanılır).",
+  "private": true,
+  "type": "module"
+}

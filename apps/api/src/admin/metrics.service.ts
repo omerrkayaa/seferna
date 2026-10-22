@@ -12,7 +12,7 @@ const WINDOW_DAYS = 30;
 const ratio = (a: number, b: number) => (b > 0 ? Math.round((a / b) * 1000) / 1000 : null);
 
 /**
- * Y5 / FR-53 tez metrikleri (docs/03 §8). Günler ve haftalar Türkiye saatine göre; hafta pazartesi başlar.
+ * Y5 / FR-53 platform metrikleri (docs/03 §8). Günler ve haftalar Türkiye saatine göre; hafta pazartesi başlar.
  * - Haftalık kapanan yük: "tamamlandı"ya geçen iş (ana başarı ölçütü), tamamlanma zamanına göre.
  * - İlan tazeliği: yayındaki ilanların son 24 saatte teyit edilen oranı.
  * - Teyit cevabı: son 30 günde sorulan sorular; cevap oranı = cevaplanan / (cevaplanan + cevapsız düşen), açık sorular hariç.

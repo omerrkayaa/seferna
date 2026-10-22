@@ -75,7 +75,7 @@ async function fetchFile(path) {
   return { status: res.status, headers: res.headers, bytes: Buffer.from(await res.arrayBuffer()) };
 }
 const lastCode = (phone, kind) =>
-  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Nakliye ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
+  [...log().matchAll(new RegExp(`\\[SMS → (\\+\\d+)\\] Seferna ${kind} kodunuz: (\\d{6})`, "g"))].filter((m) => m[1] === phone).at(-1)?.[2];
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);

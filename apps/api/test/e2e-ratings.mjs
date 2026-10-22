@@ -31,7 +31,7 @@ async function api(method, path, token, body) {
 async function login(phone) {
   await api("POST", "/auth/otp/request", null, { phone });
   await sleep(300);
-  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
+  const code = [...log().matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)[2];
   return (await api("POST", "/auth/otp/verify", null, { phone, code })).body;
 }
 async function user(phone, roles) {

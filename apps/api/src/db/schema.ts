@@ -311,7 +311,7 @@ export const loadPosts = pgTable(
 );
 
 /**
- * Her "hâlâ geçerli mi?" sorusu bir satır (tez metriği: cevap süresi, kanal, cevapsız oranı).
+ * Her "hâlâ geçerli mi?" sorusu bir satır (metrik: cevap süresi, kanal, cevapsız oranı).
  * Açık soru: answer IS NULL. Cevapsız düşen ilanda answer = 'cevapsiz', answered_at boş kalır.
  */
 export const loadConfirmations = pgTable(

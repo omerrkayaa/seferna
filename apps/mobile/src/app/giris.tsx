@@ -110,7 +110,7 @@ export default function Giris() {
         <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center", padding: 20, gap: 24 }} keyboardShouldPersistTaps="handled">
           <View style={{ gap: 6 }}>
             <Text accessibilityRole="header" style={{ fontSize: 30, fontWeight: "800", color: C.primaryText }}>
-              Nakliye
+              Seferna
             </Text>
             <Text style={{ fontSize: 18, color: "#D5DEEA" }}>Gördüğün her yük gerçek ve şu an geçerli.</Text>
           </View>
@@ -138,7 +138,7 @@ export default function Giris() {
               </>
             ) : step === "totp" ? (
               <>
-                <Muted>Yönetici hesabı: Google Authenticator ya da Microsoft Authenticator’daki “Nakliye” kodunu girin. Telefon yanınızda değilse kurtarma kodlarınızdan birini yazabilirsiniz.</Muted>
+                <Muted>Yönetici hesabı: Google Authenticator ya da Microsoft Authenticator’daki “Seferna” kodunu girin. Telefon yanınızda değilse kurtarma kodlarınızdan birini yazabilirsiniz.</Muted>
                 <Field
                   label="Doğrulama uygulamasındaki kod"
                   placeholder="6 haneli kod"

@@ -31,7 +31,7 @@ test("güzergâh sayfası: başlık, önizleme etiketleri, ilan sayısı ve fiya
   const res = await page.goto("/nakliye/aydin-istanbul");
   expect(res?.status()).toBe(200);
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Aydın – İstanbul nakliye");
-  await expect(page).toHaveTitle("Aydın İstanbul nakliye · Nakliye");
+  await expect(page).toHaveTitle("Aydın İstanbul nakliye · Seferna");
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "http://localhost:3001/nakliye/aydin-istanbul");
   await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /Aydın → İstanbul yük taşıma/);
   await expect(page.locator('meta[name="robots"]')).toHaveCount(0); // arama motoruna açık (paylaşım sayfasının aksine)

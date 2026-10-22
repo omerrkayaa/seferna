@@ -7,7 +7,7 @@ import { ABUSE_LIMITS, JOB_PARAMS, MODERATION_FREE_AFTER } from "@nakliye/shared
  * Yerel <details>: betiksiz açılır, klavyeyle ve ekran okuyucuyla çalışır.
  */
 const FAQ: [string, string][] = [
-  ["Kullanmak ücretli mi?", "Hayır. Platform tez çalışması kapsamında deneme aşamasında ve kullanım için ücret alınmıyor."],
+  ["Kullanmak ücretli mi?", "Hayır. Platform deneme aşamasında ve kullanım için ücret alınmıyor."],
   [
     "Ödeme platform üzerinden mi yapılıyor?",
     "Hayır. Fiyat, ödeme ve taşımanın kendisi yük sahibiyle nakliyeci arasındadır; platform taşıma sözleşmesinin tarafı değildir.",

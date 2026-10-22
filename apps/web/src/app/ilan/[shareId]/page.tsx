@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: PageProps<"/ilan/[shareId]">)
         l.priceType === "sabit" && l.price !== null ? tl(l.price) : "Teklif usulü"
       }`
     : "Bu ilan artık yayında değil.";
-  return { ...base, title, description, openGraph: { title, description, url: sharePath(shareId), siteName: "Nakliye", locale: "tr_TR", type: "website" } };
+  return { ...base, title, description, openGraph: { title, description, url: sharePath(shareId), siteName: "Seferna", locale: "tr_TR", type: "website" } };
 }
 
 /** FR-16 / F8 paylaşım sayfası: girişsiz; numara yok ("Ara" uygulamada, kayıtlı). */
@@ -42,7 +42,7 @@ export default function SharedLoadPage({ params }: PageProps<"/ilan/[shareId]">)
     <main className="mx-auto flex w-full max-w-md flex-1 flex-col gap-6 px-4 py-10">
       <Link href="/" className="flex items-center gap-2 text-primary">
         <Truck className="size-6" aria-hidden />
-        <span className="font-bold">Nakliye</span>
+        <span className="font-bold">Seferna</span>
       </Link>
       <Suspense fallback={<p className="text-muted-foreground">Yükleniyor…</p>}>
         <Shared params={params} />
@@ -71,7 +71,7 @@ async function Shared({ params }: Pick<PageProps<"/ilan/[shareId]">, "params">) 
         </CardHeader>
         <CardContent className="space-y-3">
           <LoadStatusBadge status={l.status} />
-          <p>Bu ilan artık yayında değil. Güncel ve teyitli yükler Nakliye uygulamasında.</p>
+          <p>Bu ilan artık yayında değil. Güncel ve teyitli yükler Seferna uygulamasında.</p>
         </CardContent>
       </Card>
     );
@@ -124,7 +124,7 @@ async function Shared({ params }: Pick<PageProps<"/ilan/[shareId]">, "params">) 
       </Card>
       <section className="space-y-2 rounded-lg bg-muted/60 p-4 text-sm">
         <h2 className="font-semibold">Bu yükü taşımak mı istiyorsunuz?</h2>
-        <p>Nakliye uygulamasında ilanı açıp yük sahibini arayın ya da teklif verin. İlanlar düzenli olarak sahibine teyit ettirilir; cevapsız kalan ilan yayından kalkar.</p>
+        <p>Seferna uygulamasında ilanı açıp yük sahibini arayın ya da teklif verin. İlanlar düzenli olarak sahibine teyit ettirilir; cevapsız kalan ilan yayından kalkar.</p>
         <p>
           Yük sahibi misiniz?{" "}
           <Link href="/giris" className="font-medium text-primary underline-offset-4 hover:underline">

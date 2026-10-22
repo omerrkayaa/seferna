@@ -84,7 +84,7 @@ export function TotpSetup({ changing = false, enableState }: { changing?: boolea
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={setup.qr} alt="Doğrulama uygulaması için QR kodu" width={240} height={240} className="rounded-lg border bg-white p-2" />
       <div className="space-y-1.5 text-sm">
-        <p>Tarayamıyorsanız uygulamada “Kurulum anahtarı gir”i seçin, hesap adı olarak “Nakliye” yazın ve şu anahtarı girin (zamana dayalı):</p>
+        <p>Tarayamıyorsanız uygulamada “Kurulum anahtarı gir”i seçin, hesap adı olarak “Seferna” yazın ve şu anahtarı girin (zamana dayalı):</p>
         {/* Gruplar arasındaki boşluklardan kırılır; grup ortadan bölünmez */}
         <code data-testid="totp-secret" className="block w-fit rounded bg-muted px-2 py-1 font-mono tracking-wide">
           {grouped(setup.secret)}
@@ -106,7 +106,7 @@ export function TotpSetup({ changing = false, enableState }: { changing?: boolea
 export function RecoveryCodes({ codes, onDone }: { codes: string[]; onDone?: () => void }) {
   const [saved, setSaved] = useState(false);
   const download = () => {
-    const text = `Nakliye yönetici kurtarma kodları (${new Date().toLocaleDateString("tr-TR")})\nHer kod bir kez kullanılır. Girişte doğrulama uygulaması kodu yerine yazılır.\n\n${codes.join("\n")}\n`;
+    const text = `Seferna yönetici kurtarma kodları (${new Date().toLocaleDateString("tr-TR")})\nHer kod bir kez kullanılır. Girişte doğrulama uygulaması kodu yerine yazılır.\n\n${codes.join("\n")}\n`;
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
     a.download = "nakliye-kurtarma-kodlari.txt";

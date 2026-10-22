@@ -46,7 +46,7 @@ async function login(phone) {
   let code;
   for (let i = 0; i < 25 && !code; i++) {
     await sleep(100);
-    code = [...out.matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)?.[2];
+    code = [...out.matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === phone).at(-1)?.[2];
   }
   return (await api("POST", "/auth/otp/verify", null, { phone, code })).body;
 }

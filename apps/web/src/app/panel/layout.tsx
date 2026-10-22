@@ -13,10 +13,10 @@ export default function PanelLayout({ children }: LayoutProps<"/panel">) {
       {/* Koyu temada birincil renk açık mavi; üst bilgi koyu zeminde kalsın */}
       <header className="border-b bg-primary text-primary-foreground dark:bg-card dark:text-card-foreground">
         <div className="mx-auto flex h-14 w-full max-w-6xl items-center gap-3 px-4 sm:gap-6">
-          <Link href="/panel" aria-label="Nakliye" className="flex shrink-0 items-center gap-2 font-bold">
+          <Link href="/panel" aria-label="Seferna" className="flex shrink-0 items-center gap-2 font-bold">
             <Truck className="size-5 text-brand-accent" aria-hidden />
             {/* Dar ekranda yalnız simge: menüye yer kalsın */}
-            <span className="hidden sm:inline">Nakliye</span>
+            <span className="hidden sm:inline">Seferna</span>
           </Link>
           {/* Dar ekranda menü kendi içinde kayar (yönetici + zil ile 390 px'e sığmıyor); sayfa yatay taşmaz */}
           <nav className="flex min-w-0 gap-4 overflow-x-auto text-sm whitespace-nowrap">

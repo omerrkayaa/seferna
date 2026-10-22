@@ -14,9 +14,9 @@ import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { buttonVariants } from "@/components/ui/button";
 import { PROVINCES, ROUTE_PAGES } from "@/lib/route-pages";
 
-// Arama sonucunda yalnız "Nakliye" görünüyordu (düzenin varsayılan başlığı); başlık ≤ 60, açıklama ≤ 160 karakter
+// Arama sonucunda yalnız marka adı görünüyordu (düzenin varsayılan başlığı); başlık ≤ 60, açıklama ≤ 160 karakter
 export const metadata: Metadata = {
-  title: { absolute: "Teyitli yük ilanları, nakliyeci ve dönüş yükü · Nakliye" },
+  title: { absolute: "Teyitli yük ilanları, nakliyeci ve dönüş yükü · Seferna" },
   description:
     "Yük sahibiyle nakliyeciyi buluşturan platform: sahibine düzenli teyit ettirilen ilanlar, teklif karşılaştırma, kodla teslim ve dönüş yükü önerisi.",
   alternates: { canonical: "/" },

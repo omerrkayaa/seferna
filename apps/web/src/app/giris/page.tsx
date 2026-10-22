@@ -15,7 +15,7 @@ export default function LoginPage({ searchParams }: PageProps<"/giris">) {
         <CardHeader>
           <div className="mb-2 flex items-center gap-2 text-primary">
             <Truck className="size-6" aria-hidden />
-            <span className="font-bold">Nakliye</span>
+            <span className="font-bold">Seferna</span>
           </div>
           <h1 className="text-xl leading-snug font-semibold">Yük sahibi paneli</h1>
           <CardDescription>Telefon numaranıza gelen SMS koduyla giriş yapın. Şifre yok.</CardDescription>

@@ -10,8 +10,8 @@ export default function TermsPage() {
       <section className="space-y-2">
         <h2>1. Hizmetin niteliği</h2>
         <p>
-          Nakliye, yük sahipleriyle nakliyecileri buluşturan bir teknoloji platformudur. Taşıma sözleşmesinin tarafı değildir; fiyat, ödeme ve
-          taşımanın yürütülmesi taraflar arasındadır. Platform şu an tez çalışması kapsamında deneme aşamasındadır ve kullanım için ücret
+          Seferna, yük sahipleriyle nakliyecileri buluşturan bir teknoloji platformudur. Taşıma sözleşmesinin tarafı değildir; fiyat, ödeme ve
+          taşımanın yürütülmesi taraflar arasındadır. Platform şu an deneme aşamasındadır ve kullanım için ücret
           alınmaz.
         </p>
       </section>

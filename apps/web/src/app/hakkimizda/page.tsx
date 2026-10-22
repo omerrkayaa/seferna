@@ -26,7 +26,7 @@ const NOT_DOING = [
   "Konum takibi yapmıyoruz: konum yalnız \"Yakınımdakiler\"e dokununca bir kez alınır, saklanmaz ve arka planda izlenmez.",
 ];
 
-/** Hakkımızda: neden, nasıl farklı, bilerek yapmadıklarımız, kim geliştiriyor. Köşeli parantezli bilgiler kullanıcı tarafından doldurulacak. */
+/** Hakkımızda: neden, nasıl farklı, bilerek yapmadıklarımız, kim geliştiriyor. */
 export default function AboutPage() {
   return (
     <>
@@ -44,11 +44,15 @@ export default function AboutPage() {
             Neden?
           </h2>
           <p>
-            Nakliye ilan uygulamalarının kullanıcı yorumlarını okuduğumuzda en sık şu şikayetlerle karşılaştık: aylar önce verilmiş ve çoktan gitmiş ilanlar, yükü
+            Seferna fikri, bir tanıdığımızın evini taşırken şoförle sohbet ederken doğdu. Ardından nakliye ilan uygulamalarının kullanıcı yorumlarını
+            okuduk.
+          </p>
+          <p>
+            Yorumlarda en sık şu şikayetlerle karşılaştık: aylar önce verilmiş ve çoktan gitmiş ilanlar, yükü
             olmayan sahte ilanlar ve telefonu açmayan ilan sahipleri. Üçünün kökü aynı: ilanın gerçek ve güncel olduğundan emin olunamaması.
           </p>
           <p>
-            Pek çok platform daha çok ilan göstermeye çalışıyor; bunun için başka yerlerden ilan topluyor ve bayat ilan sorunu büyüyor. Biz tersini seçtik:{" "}
+            Bazı platformlar ilan sayısını artırmak için başka kaynaklardan ilan topluyor; bu da bayat ilan sorununu büyütüyor. Biz tersini seçtik:{" "}
             <strong>daha az ama gerçek ilan.</strong>
           </p>
         </section>
@@ -87,8 +91,8 @@ export default function AboutPage() {
             Kim geliştiriyor?
           </h2>
           <p>
-            Platform, [Ad Soyad] tarafından [Üniversite] Bilgisayar Mühendisliği bölümünde tez projesi olarak geliştiriliyor. Şu an deneme aşamasında ve kullanmak
-            ücretsiz. Aydın – İzmir – Manisa – İstanbul hattında başlıyoruz.
+            Seferna&apos;yı Bilgisayar Mühendisliği son sınıf öğrencisi Ömer Kaya geliştiriyor. Şu an deneme aşamasında ve kullanmak ücretsiz. Aydın – İzmir –
+            Manisa – İstanbul hattında başlıyoruz.
           </p>
           <p>Görüşünüzü duymak isteriz: özellikle nakliyecilerin ve yük sahiplerinin sahadaki deneyimi platformu doğrudan şekillendiriyor.</p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-3 pt-2">
@@ -98,6 +102,9 @@ export default function AboutPage() {
             <Link href="/#nasil-calisir" className="text-sm text-primary underline-offset-4 hover:underline">
               Nasıl çalışır
             </Link>
+            <a href="https://www.instagram.com/omerkay_aa/" className="text-sm text-primary underline-offset-4 hover:underline">
+              Instagram: @omerkay_aa
+            </a>
           </div>
         </section>
       </main>

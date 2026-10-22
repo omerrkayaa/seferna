@@ -63,7 +63,7 @@ export function LoginForm({ next }: { next: string }) {
               aria-describedby={state.error ? "login-error totp-hint" : "totp-hint"}
             />
             <p id="totp-hint" className="text-sm text-muted-foreground">
-              Yönetici hesabı: Google Authenticator ya da Microsoft Authenticator’daki “Nakliye” kodunu girin. Telefonunuz yanınızda değilse kurtarma kodlarınızdan birini yazabilirsiniz.
+              Yönetici hesabı: Google Authenticator ya da Microsoft Authenticator’daki “Seferna” kodunu girin. Telefonunuz yanınızda değilse kurtarma kodlarınızdan birini yazabilirsiniz.
             </p>
           </div>
           <ErrorText message={state.error} />

@@ -1,6 +1,6 @@
 # 03 — Sistem Analizi
 
-> Tarih: 2026-10-06 · Platformlar: Android + Web · Kapsam: MVP ve tez
+> Tarih: 2026-10-06 · Platformlar: Android + Web · Kapsam: MVP
 > Kod: **FR** = fonksiyonel gereksinim, **NFR** = fonksiyonel olmayan gereksinim, **BR** = iş kuralı, **UC** = kullanım senaryosu
 
 ---
@@ -93,7 +93,7 @@ Bir kullanıcı hem nakliyeci hem yük sahibi rolüne sahip olabilir (ör. komis
 
 ### Canlı ilan teyidi (F1)
 - **BR-01:** Yeni ilan "Teyitli" doğar. `son_teyit = oluşturma zamanı`.
-- **BR-02:** Son teyitten **24 saat** sonra (yükleme gününde **6 saat** sonra) yük sahibine push ve SMS ile "Hâlâ geçerli mi? [Evet] [Araç bulundu] [İptal]" gönderilir. *(Süreler parametrik ve tezde ölçülecek.)*
+- **BR-02:** Son teyitten **24 saat** sonra (yükleme gününde **6 saat** sonra) yük sahibine push ve SMS ile "Hâlâ geçerli mi? [Evet] [Araç bulundu] [İptal]" gönderilir. *(Süreler parametrik ve kullanımda ölçülecek.)*
 - **BR-03:** Hatırlatmadan sonra **4 saat** içinde cevap gelmezse ilan **"Teyit bekliyor"** olur: listede alta iner, sarı rozet alır.
 - **BR-04:** "Teyit bekliyor" durumunda **12 saat** daha geçerse ya da yükleme tarih aralığı biterse ilan **"Süresi doldu"** olur ve listeden kalkar.
 - **BR-05:** Bir ilan için **2 farklı doğrulanmış kullanıcı** "yük yok / gitmiş" bildirirse ilan hemen "Teyit bekliyor" olur ve sahibine anlık teyit isteği gider.
@@ -214,7 +214,7 @@ Bir kullanıcı hem nakliyeci hem yük sahibi rolüne sahip olabilir (ör. komis
 
 ---
 
-## 8. Tez için ölçülecek metrikler
+## 8. Ölçülecek başarı metrikleri
 | Metrik | Tanım | İlgili özellik |
 |---|---|---|
 | **Haftalık kapanan yük** | "Tamamlandı" durumuna geçen iş sayısı | Ana başarı ölçütü |
@@ -222,4 +222,4 @@ Bir kullanıcı hem nakliyeci hem yük sahibi rolüne sahip olabilir (ör. komis
 | Bayat ilan şikayet oranı | "yük yok" şikayeti / gösterilen ilan | F1, F2 |
 | Teyit cevap oranı ve süresi | Hatırlatmaya cevap verenlerin oranı ve medyan cevap süresi | F1 |
 | Eşleşme isabeti | Bildirilen eşleşmelerden teklif ya da aramaya dönüşen oran | BR-20/21 |
-| Boş km azalması (simülasyon) | Dönüş planı ile ve onsuz senaryo karşılaştırması (sonuç: `tez/simulasyon/README.md` §7, Deney 2) | F4 |
+| Boş km azalması (simülasyon) | Dönüş planı ile ve onsuz senaryo karşılaştırması (sonuç: `arastirma/simulasyon/README.md` §7, Deney 2) | F4 |

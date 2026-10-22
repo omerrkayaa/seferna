@@ -15,8 +15,8 @@ Ortak sayaç `e2e/usability.ts`. İki pakette de aynı dosya var.
 Çalıştırmak için önce API'yi, web'i ve Expo'yu açın, sonra:
 
 ```
-cd apps/mobile && NFR07_OUT=../../tez/kullanilabilirlik/sonuclar npx playwright test e2e/usability.spec.ts
-cd apps/web && NFR07_OUT=../../tez/kullanilabilirlik/sonuclar npx playwright test e2e/usability.spec.ts
+cd apps/mobile && NFR07_OUT=../../arastirma/kullanilabilirlik/sonuclar npx playwright test e2e/usability.spec.ts
+cd apps/web && NFR07_OUT=../../arastirma/kullanilabilirlik/sonuclar npx playwright test e2e/usability.spec.ts
 ```
 
 İkinci komut üç tarayıcıda da koşar.

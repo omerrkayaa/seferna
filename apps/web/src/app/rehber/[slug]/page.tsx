@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps<"/rehber/[slug]">):
     title: g.title,
     description: g.description,
     alternates: { canonical: path },
-    openGraph: { title: g.title, description: g.description, url: path, siteName: "Nakliye", locale: "tr_TR", type: "article" },
+    openGraph: { title: g.title, description: g.description, url: path, siteName: "Seferna", locale: "tr_TR", type: "article" },
   };
 }
 

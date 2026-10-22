@@ -17,7 +17,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const UA = "nakliye-tez/0.1 (universite bitirme projesi)";
+const UA = "seferna/0.1";
 const OUT = new URL("../src/db/seed/locations.json", import.meta.url);
 const CACHE = new URL("./.cache/", import.meta.url);
 const EXPECTED = { provinces: 81, districts: 973 };

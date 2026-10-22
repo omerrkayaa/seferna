@@ -65,7 +65,7 @@ const request = (p, xff, srv = A) => api(srv, "POST", "/auth/otp/request", { bod
 /** 60 sn yeniden gönderme sınırını atlamak için bekleyen kod silinir (sınır sayımı otp_requests'te, ona dokunulmaz) */
 const clearCode = (p) => psql(`delete from otp_codes where phone='${p}'`);
 const smsCount = (srv, p) => [...srv.out.matchAll(/\[SMS → (\+\d+)\]/g)].filter((m) => m[1] === p).length;
-const lastCode = (srv, p) => [...srv.out.matchAll(/\[SMS → (\+\d+)\] Nakliye giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === p).at(-1)?.[2];
+const lastCode = (srv, p) => [...srv.out.matchAll(/\[SMS → (\+\d+)\] Seferna giriş kodunuz: (\d{6})/g)].filter((m) => m[1] === p).at(-1)?.[2];
 const rows = (where) => Number(psql(`select count(*) from otp_requests where ${where}`));
 async function login(p, xff) {
   await request(p, xff);

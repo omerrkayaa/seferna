@@ -42,7 +42,7 @@
 | Android | **React Native + Expo** | Android'e odak, hızlı geliştirme, OTA güncelleme, ileride iOS'a kapı açık | Flutter (Dart) · Kotlin + Compose (en performanslı ama web ile kod paylaşmaz) |
 | Web | **Next.js (React)** | Landing ve güzergâh sayfalarında SEO için SSR, panel için React | Vite + React (SEO zayıf) |
 | UI kitleri | Web: Tailwind + shadcn/ui · Mobil: React Native Paper ya da Tamagui | Hazır erişilebilir bileşenler | — |
-| Backend | **NestJS** (Node.js) | Modüler yapı, DI, OpenAPI üretimi, tez raporunda katmanlı mimari anlatımı kolay | Fastify (daha hafif) · Python FastAPI |
+| Backend | **NestJS** (Node.js) | Modüler yapı, DI, OpenAPI üretimi, katmanlı mimari | Fastify (daha hafif) · Python FastAPI |
 | ORM / sorgu | **Drizzle ORM** + PostGIS için ham SQL | PostGIS sorgularını rahat yazmak | Prisma (PostGIS desteği zayıf) |
 | Veritabanı | **PostgreSQL 16 + PostGIS** | Coğrafi sorgu (`ST_DWithin`), tek veritabanı | — |
 | Kuyruk / zamanlayıcı | **pg-boss** | Postgres üstünde, ek altyapı yok | BullMQ + Redis |
@@ -154,7 +154,7 @@ Skor hesabı (BR-21) uygulama katmanında yapılır, ağırlıklar `price_params
 ### Rota üstü (MVP+, BR-23)
 OSRM'den aracın rotası polyline olarak alınır ve `route_polyline` alanına kaydedilir. Bir yük aday sayılırsa şu şartlar aranır: `ST_DWithin(route, l.origin_geom, 30km)`, `ST_DWithin(route, l.dest_geom, 30km)` ve `ST_LineLocatePoint(route, origin) < ST_LineLocatePoint(route, dest)` (yön doğru).
 
-### Tez katkısı
+### Özgün katkı
 Kural tabanlı skorlama ile **atama problemi (Macar algoritması)** tabanlı küresel eşleştirme, sentetik veri üzerinde karşılaştırılabilir. Ölçütler: toplam boş km, eşleşme oranı, çalışma süresi.
 
 ---
@@ -210,7 +210,7 @@ maliyet = mesafe_km × (yakıt_l/100km × yakıt_₺/l) / 100
         + amortisman_km × mesafe_km
 tahmini_aralık = maliyet × [1,15 … 1,35]   (kâr marjı bandı, parametrik)
 ```
-Parametreler (`price_params`) araç tipine göre tutulur ve yönetici panelinden güncellenir. Gerçek kapanan iş fiyatları biriktikçe (jobs.agreed_price) **regresyon modeli** eğitilir. Bu adım tez araştırma sorusu 5'e karşılık gelir.
+Parametreler (`price_params`) araç tipine göre tutulur ve yönetici panelinden güncellenir. Gerçek kapanan iş fiyatları biriktikçe (jobs.agreed_price) **regresyon modeli** eğitilir.
 
 ---
 
@@ -231,4 +231,4 @@ Parametreler (`price_params`) araç tipine göre tutulur ve yönetici panelinden
 - **Birim:** eşleştirme skoru, teyit durum makinesi, fiyat formülü, güven skoru.
 - **Entegrasyon:** PostGIS sorguları (Testcontainers ile gerçek Postgres).
 - **E2E:** Web için Playwright (ilan ver → teklif → kabul); Android için Maestro (giriş → yük ara → ara).
-- **Simülasyon (tez):** sentetik ilan üreticisi ile eşleştirme ve dönüş planı karşılaştırmaları.
+- **Simülasyon (`arastirma/simulasyon`):** sentetik ilan üreticisi ile eşleştirme ve dönüş planı karşılaştırmaları.

@@ -91,7 +91,7 @@ export class LoadsService {
     // NFR-01: iki adım. 1) Süzme, sıralama ve sayfa yalnız ilan tablosunda (konum ifade indeksiyle); 2) ilçe, il, yük
     // sahibi ve firma yalnız sayfadaki ilanlar için birleştirilir. Tek sorguda planlayıcı mesafe süzgecinin seçiciliğini
     // 1 satır sanıp 2.000 ilan × tüm kullanıcılar iç içe döngü kuruyordu (10.000 ilanda yakınımdakiler p95 3,4 sn → bkz.
-    // tez/performans). Son ölçüt kimlik: eşit sıralı ilanlarda sayfalar kararlı.
+    // arastirma/performans). Son ölçüt kimlik: eşit sıralı ilanlarda sayfalar kararlı.
     const ranked = await this.db
       .select({ id: loadPosts.id })
       .from(loadPosts)
@@ -373,7 +373,7 @@ export class LoadsService {
       );
     }
     await this.db.insert(callLogs).values({ callerId: userId, loadPostId: id, createdAt: now });
-    // Tez metriği "eşleşme isabeti": arayanın boş araç ilanıyla bu yük arasında eşleşme varsa aramaya dönüştü say
+    // Metrik "eşleşme isabeti": arayanın boş araç ilanıyla bu yük arasında eşleşme varsa aramaya dönüştü say
     await this.db
       .update(matches)
       .set({ outcome: "arandi" })
@@ -559,7 +559,7 @@ export class LoadsService {
     if (updated.length === 0) throw new ConflictException("İlanın durumu az önce değişti; yenileyip tekrar deneyin");
   }
 
-  /** Açık bir "hâlâ geçerli mi?" sorusu varsa cevabı işler (tez metriği: cevap süresi). Kendiliğinden teyit kaydedilmez. */
+  /** Açık bir "hâlâ geçerli mi?" sorusu varsa cevabı işler (metrik: cevap süresi). Kendiliğinden teyit kaydedilmez. */
   private async answerOpenQuestion(tx: Tx, loadId: string, answer: ConfirmationAnswer, now: Date, channel: "app" | "sms" = "app") {
     await tx
       .update(loadConfirmations)

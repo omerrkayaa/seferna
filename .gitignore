@@ -17,5 +17,5 @@ apps/api/storage/
 # NFR-08 yedekleri (npm run db:backup): kişisel veri içerir, depoya girmez
 backups/
 
-# Tez simülasyonu deneme çalıştırmaları (--tohum / --haversine); asıl sonuçlar sonuclar/ altında commit edilir
-tez/simulasyon/sonuclar/deneme-*/
+# Simülasyon deneme çalıştırmaları (--tohum / --haversine); asıl sonuçlar sonuclar/ altında commit edilir
+arastirma/simulasyon/sonuclar/deneme-*/

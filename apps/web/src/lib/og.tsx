@@ -47,7 +47,7 @@ export async function ogCard({ title, chips = [], footer = SLOGAN }: { title: st
     <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", background: NAVY, color: "white", padding: "60px 72px", fontFamily: '"Inter", "Inter Ext"' }}>
       <div style={{ display: "flex", alignItems: "center", gap: 18, fontSize: 44, fontWeight: 700 }}>
         <TruckIcon />
-        Nakliye
+        Seferna
       </div>
       <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
         <div style={{ display: "flex", flexDirection: "column", fontSize: title.join("").length > 44 ? 58 : 68, fontWeight: 700, lineHeight: 1.15 }}>

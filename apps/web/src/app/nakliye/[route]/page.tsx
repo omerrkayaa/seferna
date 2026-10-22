@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/nakliye/[route]">
     title,
     description,
     alternates: { canonical: r.path },
-    openGraph: { title, description, url: r.path, siteName: "Nakliye", locale: "tr_TR", type: "website" },
+    openGraph: { title, description, url: r.path, siteName: "Seferna", locale: "tr_TR", type: "website" },
   };
 }
 

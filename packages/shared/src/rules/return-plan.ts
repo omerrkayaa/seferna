@@ -1,5 +1,5 @@
 // F4 dönüş planı — docs/03 FR-24, BR-23; docs/04 §4 "Rota üstü"
-// API ve tez simülasyonu (Deney 2) aynı kuralı kullanır; veritabanı yalnız aday ön süzgeci yapar.
+// API ve simülasyon (Deney 2) aynı kuralı kullanır; veritabanı yalnız aday ön süzgeci yapar.
 import type { BodyType, VehicleType } from "../constants.js";
 import { haversineKm, type LatLng } from "../geo.js";
 import type { CapacityForMatch, IsoDay } from "./matching.js";

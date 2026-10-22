@@ -46,7 +46,7 @@ export const smsCodes = (p: string, text: string) =>
 /** O numaraya giden son giriş kodu (SMS loga düşene kadar bekler) */
 export async function otpFor(p: string): Promise<string> {
   for (let i = 0; i < 40; i++) {
-    const code = smsCodes(p, "Nakliye giriş kodunuz").at(-1);
+    const code = smsCodes(p, "Seferna giriş kodunuz").at(-1);
     if (code) return code;
     await sleep(150);
   }

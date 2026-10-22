@@ -32,7 +32,7 @@ export async function smsCode(p: string, text: string): Promise<string> {
   throw new Error(`SMS bulunamadı: ${p} ${text}`);
 }
 
-export const otpFor = (p: string) => smsCode(p, "Nakliye giriş kodunuz");
+export const otpFor = (p: string) => smsCode(p, "Seferna giriş kodunuz");
 
 export async function api<T = Record<string, string>>(method: string, path: string, token?: string, body?: unknown) {
   const res = await fetch(API + path, {

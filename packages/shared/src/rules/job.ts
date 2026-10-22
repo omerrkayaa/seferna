@@ -64,4 +64,4 @@ export function vehicleFitError(
 
 /** Teslim kodu SMS'i (ASCII, tek parça; bkz. sms.ts maliyet notu). */
 export const deliveryCodeSmsText = (code: string) =>
-  `Nakliye teslim kodunuz: ${code}. Yuk teslim alininca bu kodu soforle paylasin; once paylasmayin.`;
+  `Seferna teslim kodunuz: ${code}. Yuk teslim alininca bu kodu soforle paylasin; once paylasmayin.`;
