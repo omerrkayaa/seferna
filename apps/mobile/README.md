@@ -1,6 +1,6 @@
 # Nakliye — Android uygulaması (Expo)
 
-Expo SDK 57 · Expo Router · React Native 0.86. Nakliyeci ve yük sahibi ekranları (docs/02 §4); sekmeler role göre:
+Expo SDK 57 · Expo Router · React Native 0.86. Nakliyeci ve yük sahibi ekranları; sekmeler role göre:
 nakliyeci **Yükler · Dönüş Planı**, yük sahibi **İlanlarım** (ilan verme oradan), ortak **İşlerim · Profil**. Bildirimler sağ üstteki zilde.
 
 Henüz yok: gerçek push bildirimi (FCM; Firebase projesi ve geliştirme derlemesi gerekir — Expo Go Android'de uzak bildirimi

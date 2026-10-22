@@ -1,4 +1,4 @@
-// docs/02 §3: lacivert (güven) + turuncu vurgu, "Ara" yeşil; açık tema öncelikli. Web paneliyle aynı tonlar.
+// Lacivert (güven) + turuncu vurgu, "Ara" yeşil; açık tema öncelikli. Web paneliyle aynı tonlar.
 // NFR-06 (WCAG AA, axe taraması 2026-10-15): metin 4,5:1, grafik/durum 3:1. Turuncu zeminde yazı koyu (beyaz 2,9:1
 // kalıyordu); yeşil koyulaştırıldı (#1F9D55'te beyaz 3,5:1, açık yeşil zeminde yazı 3,1:1 idi); turuncu metin ve
 // seçili yıldız için koyu turuncu.
@@ -25,5 +25,5 @@ export const C = {
   idleBg: "#ECEFF3",
 } as const;
 
-/** Şoför dostu: en az 48 dp dokunma alanı (docs/02 ilkeler) */
+/** Şoför dostu: en az 48 dp dokunma alanı */
 export const TOUCH = 48;

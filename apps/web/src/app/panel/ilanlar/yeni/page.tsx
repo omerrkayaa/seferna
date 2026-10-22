@@ -11,7 +11,7 @@ import { NewLoadForm, type LoadDraft } from "./new-load-form";
 export const metadata: Metadata = { title: "Yeni ilan" };
 
 /**
- * P3 ilan oluştur (tek ekran, docs/02 ilke 4). `?kopya=<ilan>`: eski ilanın bilgileriyle dolu gelir ("Benzerini yayınla").
+ * P3 ilan oluştur (tek ekran). `?kopya=<ilan>`: eski ilanın bilgileriyle dolu gelir ("Benzerini yayınla").
  * `?nereden=<il>&nereye=<il>` (plaka kodu; tanıtımdaki rota formu ve güzergâh sayfaları): iller seçili gelir.
  */
 export default function NewLoadPage({ searchParams }: PageProps<"/panel/ilanlar/yeni">) {

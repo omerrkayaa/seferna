@@ -8,7 +8,7 @@ import type { PublicFeed } from "@/lib/types";
 const tons = new Intl.NumberFormat("tr-TR", { maximumFractionDigits: 2 });
 
 /**
- * Tanıtımdaki canlı yük akışı (docs/01 §7 madde 4; karar 2026-10-16): en son teyit edilen ilanlar, istek anında.
+ * Tanıtımdaki canlı yük akışı (karar 2026-10-16): en son teyit edilen ilanlar, istek anında.
  * Sayfa kabuğu statik kalır, akış sonradan gelir. Anonim: numara, ilan sahibi, fiyat ve ilana bağlantı yok.
  */
 export function LiveFeed() {

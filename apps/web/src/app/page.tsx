@@ -31,7 +31,7 @@ const FEATURES: [LucideIcon, string, string][] = [
   [Share2, "WhatsApp'ta paylaş", "İlanı tek dokunuşla gruplara gönderin; bağlantı ilanın güncel durumunu gösterir."],
 ];
 
-/** W1 tanıtım sayfası (docs/02 §5a): değer önerisi, farklar, nasıl çalışır (yük sahibi / nakliyeci sekmeleri), Dönüş Planı canlandırması, rozetlerin anlamı (W3 özeti), canlı yük akışı, panel ve uygulama ekranları, SSS. */
+/** W1 tanıtım sayfası: değer önerisi, farklar, nasıl çalışır (yük sahibi / nakliyeci sekmeleri), Dönüş Planı canlandırması, rozetlerin anlamı (W3 özeti), canlı yük akışı, panel ve uygulama ekranları, SSS. */
 export default function Home() {
   return (
     <>

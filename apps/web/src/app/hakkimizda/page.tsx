@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/hakkimizda" },
 };
 
-// Her madde uygulamada var olan bir özelliğe karşılık gelir; gerekçe docs/01 (rakip analizi, kullanıcı yorumları).
+// Her madde uygulamada var olan bir özelliğe karşılık gelir.
 const DIFFERENCES: [LucideIcon, string, string][] = [
   [RefreshCcw, "İlan teyit edilir", "Sahibi “hâlâ geçerli” demeyen ilan listeden düşer; kartta son teyidin ne zaman olduğu yazar."],
   [BadgeCheck, "İlanı sahibi verir", "Başka yerden toplanmış ilan yok; her ilan telefonu doğrulanmış bir hesaptan gelir."],

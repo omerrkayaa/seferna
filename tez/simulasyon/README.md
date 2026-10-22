@@ -1,6 +1,6 @@
 # Tez simülasyonları
 
-Bu klasör, tezin Faz 6 deneylerinin (docs/05) simülasyon kodunu, testlerini ve sonuçlarını içerir.
+Bu klasör, tezin Faz 6 deneylerinin simülasyon kodunu, testlerini ve sonuçlarını içerir.
 
 - **Deney 1:** Kural tabanlı eşleştirme (sistemin kendisi) ile Macar algoritması tabanlı küresel eşleştirmenin karşılaştırılması (docs/04 §4 "Tez katkısı").
 - **Deney 3:** Canlı ilan teyidinin (F1, BR-01…05) ilan tazeliğine etkisi ve teyit sürelerinin duyarlılık analizi.

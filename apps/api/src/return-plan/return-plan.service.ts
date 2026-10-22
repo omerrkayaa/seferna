@@ -42,7 +42,7 @@ const latLng = (pt: Point): LatLng => ({ lat: pt.y, lng: pt.x });
 const geog = (pt: Point) => sql`ST_SetSRID(ST_MakePoint(${pt.x}::float8, ${pt.y}::float8), 4326)::geography`;
 
 /**
- * F4 dönüş planı (FR-24, BR-23; docs/02 A10). Nakliyecinin süren işi için iki öneri grubu:
+ * F4 dönüş planı (FR-24, BR-23). Nakliyecinin süren işi için iki öneri grubu:
  * - **Dönüş yükleri:** işin varışından kalkıp işin kalkış bölgesine giden yükler — BR-20 kuralı, sanal boş araç ilanıyla
  *   (varış noktasından eve, tahmini varış günü … +2, işteki araç).
  * - **Rota üstü ara yükler:** dönüş yolunun (OSRM çizgisi) üstünde, kalkışı ve varışı ≤ 30 km sapan, yönü doğru yükler.

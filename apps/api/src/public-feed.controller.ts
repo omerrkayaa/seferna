@@ -14,7 +14,7 @@ const dp = alias(provinces, "dp");
 const FEED_SIZE = 6;
 
 /**
- * Tanıtım sayfasındaki canlı yük akışı (docs/01 §7 madde 4; karar 2026-10-16); girişsiz. Süzgeç yük akışı ve
+ * Tanıtım sayfasındaki canlı yük akışı (karar 2026-10-16); girişsiz. Süzgeç yük akışı ve
  * güzergâh sayfasıyla aynı (teyitli/teyit bekliyor, yükleme günü geçmemiş); en son teyit edilenler önde.
  * Anonim: numara, ad, ilan kimliği, paylaşım kimliği, fiyat ve not dönmez (ilan sahibi tanıtımda yayımlanmayı seçmedi).
  */

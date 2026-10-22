@@ -2,7 +2,7 @@ import { ChevronDown } from "lucide-react";
 import { ABUSE_LIMITS, JOB_PARAMS, MODERATION_FREE_AFTER } from "@nakliye/shared";
 
 /**
- * Tanıtım sayfası SSS (docs/01 §7 madde 1). Cevaplar platformda gerçekten uygulanan kurallarla aynı; sabit sayılar
+ * Tanıtım sayfası SSS. Cevaplar platformda gerçekten uygulanan kurallarla aynı; sabit sayılar
  * shared'dan gelir. Teyit aralıkları yöneticinin değiştirebildiği parametre olduğu için sayı verilmez.
  * Yerel <details>: betiksiz açılır, klavyeyle ve ekran okuyucuyla çalışır.
  */

@@ -12,7 +12,7 @@ import { ConfirmButton } from "./ilanlar/confirm-button";
 
 export const metadata: Metadata = { title: "Gösterge" };
 
-/** P2 gösterge paneli (docs/02): yayındaki ilanlar, teyit bekleyenler, gelen teklifler, bu ayki taşımalar. */
+/** P2 gösterge paneli: yayındaki ilanlar, teyit bekleyenler, gelen teklifler, bu ayki taşımalar. */
 export default function Dashboard({ searchParams }: PageProps<"/panel">) {
   return (
     <div className="space-y-6">

@@ -2,7 +2,7 @@ import { LOAD_STATUS_LABELS, type LoadStatus } from "@nakliye/shared";
 import { CircleCheck, CircleX, Clock, FilePen, Hourglass, Lock, TimerOff, type LucideIcon } from "lucide-react";
 import { cn } from "cn";
 
-// Durum yalnız renkle değil ikon ve metinle de belirtilir (docs/02 §7, renk körlüğü)
+// Durum yalnız renkle değil ikon ve metinle de belirtilir (renk körlüğü)
 const STYLE: Record<LoadStatus, { icon: LucideIcon; className: string }> = {
   teyitli: { icon: CircleCheck, className: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-100 border-emerald-200 dark:border-emerald-800" },
   teyit_bekliyor: { icon: Clock, className: "bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-100 border-amber-300 dark:border-amber-800" },

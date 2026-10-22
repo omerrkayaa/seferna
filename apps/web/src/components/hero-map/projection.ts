@@ -16,7 +16,7 @@ export interface HeroMapData {
   districts: [number, number][];
 }
 
-// Sitenin renkleri (globals.css: --primary, --brand-accent) ve uygulamadaki ilan durumu renkleri (docs/02)
+// Sitenin renkleri (globals.css: --primary, --brand-accent) ve uygulamadaki ilan durumu renkleri
 export const COLORS = {
   primary: "#17325b",
   accent: "#f3680f",

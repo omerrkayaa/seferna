@@ -93,7 +93,7 @@ test("aramadan aramaya: nakliyeci yük akışından yük sahibini arar (< 3 doku
   u.outsideTap("Telefonun arama ekranında ara");
   const feed = u.result("Akıştaki karttan arama");
 
-  // b) Önce kalkış ilini seçip (docs/02: uygulamayı aç → rotayı seç → ara)
+  // b) Önce kalkış ilini seçip (uygulamayı aç → rotayı seç → ara)
   u = new Ops(false);
   u.step("Nereden");
   await pick(u, page, "Nereden: Her yer", 0, "Nereden ara", provinces.map((p) => p.name), "Aydın");

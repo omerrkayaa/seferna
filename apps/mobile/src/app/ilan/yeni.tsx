@@ -29,7 +29,7 @@ const FIELD_MESSAGES: Record<string, string> = {
 const num = (v: string) => (v.trim() === "" ? Number.NaN : Number(v.replace(",", ".")));
 const daysBetween = (a: string, b: string) => Math.round((Date.parse(`${b}T12:00:00Z`) - Date.parse(`${a}T12:00:00Z`)) / 86_400_000);
 
-/** A17 — İlan ver: tek ekran (docs/02: 3 dokunuşta iş). İlk ilanlar moderasyona düşebilir (BR-11). `?kopya=<ilan>`: eski ilandan doldurulur. */
+/** A17 — İlan ver: tek ekran (3 dokunuşta iş). İlk ilanlar moderasyona düşebilir (BR-11). `?kopya=<ilan>`: eski ilandan doldurulur. */
 export default function IlanYeni() {
   const { kopya } = useLocalSearchParams<{ kopya?: string }>();
   const provinces = useProvinces();

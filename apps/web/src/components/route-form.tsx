@@ -6,7 +6,7 @@ import { TR_PROVINCES } from "@/lib/provinces";
 const SORTED = [...TR_PROVINCES].sort((a, b) => a[1].localeCompare(b[1], "tr"));
 
 /**
- * Tanıtım açılışında rota formu (docs/01 §7 madde 2): iller seçilir, ilan formu bu illerle açılır (ilçe orada seçilir).
+ * Tanıtım açılışında rota formu: iller seçilir, ilan formu bu illerle açılır (ilçe orada seçilir).
  * Betiksiz GET formu; girişsizse proxy girişe gönderir ve sorgu dizesi girişten sonra korunur.
  */
 export function RouteForm() {

@@ -109,7 +109,7 @@ export class LoadsService {
       ? (await this.selectLoads(distance).where(inArray(loadPosts.id, [...position.keys()]))).sort((a, b) => position.get(a.load.id)! - position.get(b.load.id)!)
       : [];
 
-    // A6 kart: yük sahibinin puanı ve tamamlanan işi (güven sinyali; docs/02 ilke "her kartta güven sinyali")
+    // A6 kart: yük sahibinin puanı ve tamamlanan işi (güven sinyali)
     const rep = await this.trust.reputationMany(rows.slice(0, PAGE_SIZE).map((r) => r.load.shipperId));
     return this.page(rows, q.page, (r) => this.withReputation(this.view(r, false), rep.get(r.load.shipperId)!));
   }
@@ -149,7 +149,7 @@ export class LoadsService {
   }
 
   /**
-   * P2 gösterge paneli (docs/02): yayındaki ve teyit bekleyen ilanlar, moderasyondakiler, bekleyen teklifler (ilan
+   * P2 gösterge paneli: yayındaki ve teyit bekleyen ilanlar, moderasyondakiler, bekleyen teklifler (ilan
    * başına), süren taşımalar ve bu ay (Türkiye saati) tamamlanan/iptal edilen taşımalar. Listeler kısa (en çok 5).
    */
   async summary(userId: string) {

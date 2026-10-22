@@ -1,4 +1,4 @@
-// Sektör sözlüğü: arayüzde ve API'de aynı değerler kullanılır (docs/02 §3 ilke 8).
+// Sektör sözlüğü: arayüzde ve API'de aynı değerler kullanılır.
 
 export const ROLES = ["carrier", "shipper", "admin"] as const;
 export type Role = (typeof ROLES)[number];

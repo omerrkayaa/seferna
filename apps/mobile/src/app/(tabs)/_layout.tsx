@@ -4,7 +4,7 @@ import { NotificationBell } from "@/components/notification-bell";
 import { useAuth } from "@/lib/auth";
 import { C } from "@/lib/theme";
 
-// docs/02 §4 alt sekmeler: Yükler · Dönüş Planı · İlan Ver · İşlerim · Profil.
+// Alt sekmeler: Yükler · Dönüş Planı · İlan Ver · İşlerim · Profil.
 // Role göre: nakliyeci Yükler + Dönüş Planı, yük sahibi İlanlarım (ilan verme oradan); ikisi birden olan hepsini görür.
 // "İlan Ver" ayrı sekme yerine İlanlarım'ın üstünde: iki rollü kullanıcıda 6 sekme olmasın diye.
 export default function TabsLayout() {

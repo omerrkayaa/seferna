@@ -17,7 +17,7 @@ export const KOK_TOHUM = 20261012;
 // ── Coğrafya [T] ────────────────────────────────────────────────────
 // İl ağırlıkları: kalkış ve varış ili bu ağırlıklarla seçilir, ilçe il içinde düzgün seçilir [T].
 
-/** Başlangıç koridoru (docs/05, pilot bölgesi) */
+/** Başlangıç koridoru (pilot bölgesi) */
 export const KORIDOR_ILLERI = ["Aydın", "İzmir", "Manisa", "İstanbul"] as const;
 /** Büyük yük merkezleri */
 export const MERKEZ_ILLERI = ["Ankara", "Bursa", "Kocaeli", "Konya", "Mersin"] as const;

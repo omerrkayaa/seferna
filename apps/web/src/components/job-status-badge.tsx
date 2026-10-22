@@ -2,7 +2,7 @@ import { JOB_STATUS_LABELS, type JobStatus } from "@nakliye/shared";
 import { CircleCheck, CircleX, Handshake, Package, PackageCheck, TriangleAlert, Truck, type LucideIcon } from "lucide-react";
 import { cn } from "cn";
 
-// Durum yalnız renkle değil ikon ve metinle de belirtilir (docs/02 §7)
+// Durum yalnız renkle değil ikon ve metinle de belirtilir
 const STYLE: Record<JobStatus, { icon: LucideIcon; className: string }> = {
   anlasildi: { icon: Handshake, className: "bg-sky-50 dark:bg-sky-950/40 text-sky-900 dark:text-sky-100 border-sky-200 dark:border-sky-800" },
   yuklendi: { icon: Package, className: "bg-sky-50 dark:bg-sky-950/40 text-sky-900 dark:text-sky-100 border-sky-200 dark:border-sky-800" },

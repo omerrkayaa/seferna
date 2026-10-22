@@ -8,7 +8,7 @@ import { ago, dayRange, place, reputationText, tl } from "@/lib/format";
 import { C } from "@/lib/theme";
 import type { Load } from "@/lib/types";
 
-/** Güven sinyali: her kartta teyit durumu + son teyit (docs/02 ilkeler) */
+/** Güven sinyali: her kartta teyit durumu + son teyit */
 export function ConfirmBadge({ load }: { load: Pick<Load, "status" | "lastConfirmedAt"> }) {
   if (load.status === "teyit_bekliyor") return <Badge tone="warn" icon="time-outline" label="Teyit bekliyor" />;
   return <Badge tone="ok" icon="checkmark-circle" label={`Teyitli · ${ago(load.lastConfirmedAt)}`} />;

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps<"/nakliye/[route]">
   };
 }
 
-/** W2 güzergâh sayfası (docs/02 §5a): arama motoruna açık. Yayındaki ilan sayısı ve F7 fiyat aralığı istek anında. */
+/** W2 güzergâh sayfası: arama motoruna açık. Yayındaki ilan sayısı ve F7 fiyat aralığı istek anında. */
 export default async function RouteLandingPage({ params }: PageProps<"/nakliye/[route]">) {
   const r = routePage((await params).route);
   if (!r) notFound();
